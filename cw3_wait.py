@@ -34,7 +34,9 @@ tutorial.click()
 # explicit wait
 # oczekiwanie na konktetnie ten jeden element przez 10 sekun z czestotliwoscia 0.5 sekundy
 wait = WebDriverWait(driver, 10, 0.5)
-wait.until(EC.visibility_of_element_located((By.XPATH, "//*[@id='leftmenuinnerinner']/a[43]")))
+# wait.until(EC.visibility_of_element_located((By.XPATH, "//*[@id='leftmenuinnerinner']/a[43]")))
+# definicja wlasnego warunku za pomoca lambdy
+wait.until(lambda x: len(x.find_elements("xpath", "//*[@id='leftmenuinnerinner']/a[43]")))
 
 # wybór z lewego menu "Input types"
 inputTypes = driver.find_element("xpath", "//*[@id='leftmenuinnerinner']/a[43]")
@@ -42,3 +44,12 @@ inputTypes.click()
 
 time.sleep(200)
 driver.quit()
+
+
+""" lambda - jednolinijkowa mini funkja
+def add_two(x):
+    return x + 2
+
+o_dwa_wiecej = add_two(5)  # >> 7
+o_dwa_wiecej = lambda x: x+2  # >> 7
+"""

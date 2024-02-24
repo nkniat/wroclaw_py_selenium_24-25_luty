@@ -23,9 +23,42 @@ menu.click()
 tutorial = driver.find_element("xpath", "//a[@title='HTML Tutorial']")
 tutorial.click()
 
-# wybór z lewego menu "Input types"
-inputTypes = driver.find_element("xpath", "//*[@id='leftmenuinnerinner']/a[43]")
-inputTypes.click()
+# wybór z lewego menu "Tag list"
+tagList = driver.find_element("xpath", "//*[@id='leftmenuinnerinner']/a[67]")
+tagList.click()
+
+# wybór z menu "Input"
+inputTag = driver.find_element("xpath", "//*[@id='leftmenuinnerinner']/div/a[59]")
+inputTag.click()
+
+# wybór z menu "disable"
+disable = driver.find_element("xpath", "//*[@id='main']/table[2]/tbody/tr[8]/td[1]/a")
+disable.click()
+
+# klikniecie 'try it yourself'
+tryIt = driver.find_element("xpath", "//*[@id='main']/div[2]/a")
+tryIt.click()
+
+print("Aktualne okno:", driver.title)
+
+# obecna zakładka
+currentWindows = driver.current_window_handle
+
+# wszystkio okna
+windowsNames = driver.window_handles
+
+for window in windowsNames:
+    if window != currentWindows:
+        driver.switch_to.window(window)
+
+print("Aktualne okno - po przełączeniu:", driver.title)
+
+# przełączenie się do iframe - czyli strony w środku strony
+driver.switch_to.frame(driver.find_element("id", "iframeResult"))
+
+# wprowadź imie
+name = driver.find_element("id", "fname")
+name.send_keys("Natalia")
 
 time.sleep(200)
 driver.quit()

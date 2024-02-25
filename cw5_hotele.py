@@ -47,5 +47,5 @@ assert hotels_name[1] == "Oasis Beach Tower"
 assert hotels_name[2] == "Rose Rayhaan Rotana"
 assert hotels_name[3] == "Hyatt Regency Perth"
 
-time.sleep(10)
+time.sleep(500)
 driver.quit()

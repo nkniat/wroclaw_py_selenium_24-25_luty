@@ -23,9 +23,11 @@ class MyAccountLocators:
     username_input = ("id", "username")
     password_input = ("id", "password")
     login_button = ("name", "login")
-    msg_error_div = ("xpath", "//*[@id='page-7']/div/section/div/div/div[1]/ul/li")
+
     reg_email_input = ("id", "reg_email")
     reg_password_input = ("id", "reg_password")
     register_button = ("name", "register")
+
+    msg_error_div = ("xpath", "//*[@id='page-7']/div/section/div/div/div[1]/ul/li")
     logout_link = (By.LINK_TEXT, "Logout")
 

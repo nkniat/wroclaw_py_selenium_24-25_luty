@@ -1,5 +1,6 @@
 from page_object_pattern_shop.locators import locators
 
+
 class MyAccountPage:
 
     def __init__(self, driver):

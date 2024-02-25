@@ -1,8 +1,11 @@
+from page_object_pattern.locators.locators import SearchResulLocators
+
+
 class SearchResultPage:
 
     def __init__(self, driver):
         self.driver = driver
-        self.hotel_names_xpath = "//h4[contains(@class, 'list_title')]//b"
+        self.hotel_names_xpath = SearchResulLocators.hotel_names_xpath
 
     def get_hotel_names(self):
         hotels = self.driver.find_elements("xpath", self.hotel_names_xpath)

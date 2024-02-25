@@ -1,16 +1,19 @@
+from page_object_pattern.locators.locators import SearchHotelLocators
+
+
 class SearchHotelPage:
 
     def __init__(self, driver):
         self.driver = driver
-        self.search_hotel_span_xpath = "//span[text()='Search by Hotel or City Name']"
-        self.search_hotel_input_xpath = "//*[@id='select2-drop']/div/input"
-        self.search_hotel_match_xpath = "//*[@id='select2-drop']/ul/li/ul/li/div"
-        self.checkin_input_name = "checkin"
-        self.checkout_input_name = "checkout"
-        self.travellers_input_name = "travellers"
-        self.adults_input_name = "adults"
-        self.child_input_name = "child"
-        self.search_button_xpath = "//*[@id='hotels']/form/div[5]/button"
+        self.search_hotel_span_xpath = SearchHotelLocators.search_hotel_span_xpath
+        self.search_hotel_input_xpath = SearchHotelLocators.search_hotel_input_xpath
+        self.search_hotel_match_xpath = SearchHotelLocators.search_hotel_match_xpath
+        self.checkin_input_name = SearchHotelLocators.checkin_input_name
+        self.checkout_input_name = SearchHotelLocators.checkout_input_name
+        self.travellers_input_name = SearchHotelLocators.travellers_input_name
+        self.adults_input_name = SearchHotelLocators.adults_input_name
+        self.child_input_name = SearchHotelLocators.child_input_name
+        self.search_button_xpath = SearchHotelLocators.search_button_xpath
 
     def set_city(self, city):
         self.driver.find_element("xpath", self.search_hotel_span_xpath).click()
